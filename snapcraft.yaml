@@ -1,7 +1,7 @@
 name: paperwork
 base: core22
 adopt-info: paperwork
-summary: Paperwork is a personal document manager. It manages scanned documents and PDFs.
+summary: Paperwork is a personal document manager.
 description: |
   Paperwork is a personal document manager. It manages scanned documents and PDFs.
 grade: stable
