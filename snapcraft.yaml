@@ -33,6 +33,10 @@ apps:
     plugs:
       - home
       - removable-media
+      - avahi-observe
+      - avahi-control
+      - bluez
+      - system-observe
       - cups
       - network
       - network-status
