@@ -12,6 +12,14 @@ architectures:
   - build-on: armhf
   - build-on: arm64
 
+plugs:
+  foo-install-cups:
+    interface: content
+    content: foo
+    default-provider: cups
+    target: $SNAP_DATA/foo
+
+
 slots:
   paperwork:
     interface: dbus
@@ -25,6 +33,7 @@ apps:
     plugs:
       - home
       - removable-media
+      - cups
       - network
       - network-status
       - network-bind
