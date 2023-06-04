@@ -64,6 +64,7 @@ parts:
       - wget
       - curl
       - git
+      - python3-setuptools
     override-pull: |
       craftctl default
       craftctl set version=$(git describe --tags --abbrev=0)
