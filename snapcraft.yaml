@@ -22,6 +22,14 @@ apps:
   paperowrk:
     command: usr/bin/paperwork
     extensions: [gnome]
+    plugs:
+      - home
+      - removable-media
+      - network
+      - network-status
+      - network-bind
+      - screen-inhibit-control
+      - unity7
     common-id: work.openpaper.Paperwork
     #desktop: usr/share/applications/
 
