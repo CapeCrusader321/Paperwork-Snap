@@ -31,7 +31,7 @@ parts:
     source: https://gitlab.gnome.org/World/OpenPaperwork/paperwork.git
     source-tag: 2.1.2
     plugin: make
-    meson-parameters:
+    make-parameters:
       - --prefix=/usr
     build-packages:
       - python3-virtualenv 
