@@ -1,0 +1,48 @@
+name: paperwork
+base: core22
+adopt-info: paperwork
+summary: Paperwork is a personal document manager. It manages scanned documents and PDFs.
+description: |
+  Paperwork is a personal document manager. It manages scanned documents and PDFs.
+grade: stable
+confinement: strict
+compression: lzo
+architectures:
+  - build-on: amd64
+  - build-on: armhf
+  - build-on: arm64
+
+slots:
+  paperwork:
+    interface: dbus
+    bus: session
+    name: work.openpaper.Paperwork
+
+apps:
+  paperowrk:
+    command: usr/bin/paperwork
+    extensions: [gnome]
+    common-id: work.openpaper.Paperwork
+    #desktop: usr/share/applications/
+
+
+parts:
+  paperwork:
+    source: https://gitlab.gnome.org/World/OpenPaperwork/paperwork.git
+    source-tag: 2.1.2
+    plugin: make
+    meson-parameters:
+      - --prefix=/usr
+    build-packages:
+      - python3-virtualenv 
+      - virtualenv 
+      - python3-dev 
+      - meson 
+      - build-essential 
+      - libsane-dev 
+      - python3-gi 
+      - valac 
+    override-pull: |
+      craftctl default
+      craftctl set version=$(git describe --tags --abbrev=0)
+      
